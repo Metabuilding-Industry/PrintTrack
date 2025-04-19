@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Système d'Alertes - Application de Suivi de Production</title>
+    <meta name="description" content="Système d'alertes et notifications de l'application de suivi de production pour l'impression offset et héliogravure">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&family=Source+Code+Pro&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">Print<span>Track</span></div>
+            <nav>
+                <ul>
+                    <li><a href="../index.html">Accueil</a></li>
+                    <li><a href="overview.html">Vue d'ensemble</a></li>
+                    <li><a href="architecture.html">Architecture</a></li>
+                    <li><a href="features.html">Fonctionnalités</a></li>
+                    <li><a href="workflow.html">Workflow</a></li>
+                    <li><a href="alerts.html" class="active">Alertes</a></li>
+                    <li><a href="technical.html">Technique</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Breadcrumbs -->
+    <div class="container mt-3" style="margin-top: 5rem;">
+        <ul class="breadcrumbs">
+            <li><a href="../index.html">Accueil</a></li>
+            <li class="active">Système d'Alertes</li>
+        </ul>
+    </div>
+
+    <!-- Main Content -->
+    <section class="alerts-detail">
+        <div class="container">
+            <div class="section-title">
+                <h1>Système d'Alertes et Notifications</h1>
+            </div>
+            
+            <div class="row animate-on-scroll">
+                <div class="col">
+                    <p>Le système d'alertes et notifications est un composant essentiel de l'application, permettant de détecter rapidement les anomalies, d'informer les utilisateurs concernés et de faciliter la prise de décision. Il assure une surveillance continue des paramètres critiques et contribue à l'amélioration de la qualité et de la productivité.</p>
+                </div>
+            </div>
+            
+            <div class="row mt-3 animate-on-scroll delay-1">
+                <div class="col">
+                    <h2>Types d'Alertes</h2>
+                    <p>L'application distingue plusieurs catégories d'alertes, chacune avec son niveau de priorité et ses caractéristiques spécifiques.</p>
+                    
+                    <div class="alert-types mt-2">
+                        <div class="alert-card urgent">
+                            <h3><i class="fas fa-exclamation-circle"></i> Alertes de Paramètres Techniques</h3>
+                            <p>Surveillance des paramètres spécifiques à chaque procédé d'impression.</p>
+                            <ul>
+                                <li><strong>Déviation Critique</strong> - Paramètre hors des limites de sécurité ou qualité critiques</li>
+                                <li><strong>Déviation Importante</strong> - Paramètre proche des limites ou tendance négative rapide</li>
+                                <li><strong>Déviation Mineure</strong> - Paramètre hors de la plage optimale mais dans les tolérances</li>
+                                <li><strong>Tendance Anormale</strong> - Évolution inhabituelle d'un paramètre dans le temps</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="alert-card high">
+                            <h3><i class="fas fa-industry"></i> Alertes de Production</h3>
+                            <p>Suivi des performances et des incidents de production.</p>
+                            <ul>
+                                <li><strong>Arrêt Machine</strong> - Arrêt non planifié de la machine</li>
+                                <li><strong>Ralentissement</strong> - Vitesse de production inférieure à l'objectif</li>
+                                <li><strong>Rebut Excessif</strong> - Taux de rebut supérieur au seuil acceptable</li>
+                                <li><strong>Fin de Consommable</strong> - Niveau bas d'encre, solvant, support, etc.</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="alert-card medium">
+                            <h3><i class="fas fa-check-circle"></i> Alertes de Qualité</h3>
+                            <p>Contrôle de la conformité aux exigences qualité.</p>
+                            <ul>
+                                <li><strong>Non-Conformité Critique</strong> - Défaut majeur affectant la fonctionnalité du produit</li>
+                                <li><strong>Non-Conformité Esthétique</strong> - Défaut visuel mais n'affectant pas la fonctionnalité</li>
+                                <li><strong>Variation Couleur</strong> - Écart colorimétrique par rapport à la référence</li>
+                                <li><strong>Défaut Récurrent</strong> - Même défaut apparaissant à intervalles réguliers</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="alert-card low">
+                            <h3><i class="fas fa-calendar-alt"></i> Alertes de Planification</h3>
+                            <p>Gestion des délais et des ressources.</p>
+                            <ul>
+                                <li><strong>Retard Production</strong> - Temps de production dépassant l'estimation</li>
+                                <li><strong>Conflit Ressources</strong> - Ressource requise déjà assignée à un autre travail</li>
+                                <li><strong>Maintenance Requise</strong> - Seuil de maintenance préventive atteint</li>
+                                <li><strong>Expiration Validation</strong> - BAT ou validation client proche de l'expiration</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row mt-4 animate-on-scroll delay-2">
+                <div class="col">
+                    <h2>Seuils de Déclenchement</h2>
+                    <p>Les alertes sont déclenchées en fonction de seuils prédéfinis, adaptés à chaque procédé d'impression et personnalisables selon les besoins spécifiques.</p>
+                    
+                    <div class="tabs mt-2">
+                        <div class="tab-links">
+                            <div class="tab-link active" data-target="#tab-offset-thresholds">Paramètres Offset</div>
+                            <div class="tab-link" data-target="#tab-gravure-thresholds">Paramètres Héliogravure</div>
+                            <div class="tab-link" data-target="#tab-production-thresholds">Paramètres de Production</div>
+                        </div>
+                        
+                        <div class="tab-content">
+                            <div id="tab-offset-thresholds" class="tab-pane active">
+                                <div class="table-responsive">
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                <th>Paramètre</th>
+                                                <th>Seuil Alerte Mineure</th>
+                                                <th>Seuil Alerte Majeure</th>
+                                                <th>Seuil Alerte Critique</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>pH Mouillage</td>
+                                                <td>4.8-5.2</td>
+                                                <td>4.6-4.8 ou 5.2-5.4</td>
+                                                <td>&lt;4.6 ou &gt;5.4</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Conductivité</td>
+                                                <td>±10% valeur cible</td>
+                                                <td>±15% valeur cible</td>
+                                                <td>±20% valeur cible</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Température Encre</td>
+                                                <td>±2°C valeur cible</td>
+                                                <td>±4°C valeur cible</td>
+                                                <td>±6°C valeur cible</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Densité Optique</td>
+                                                <td>±0.05 valeur cible</td>
+                                                <td>±0.1 valeur cible</td>
+                                                <td>±0.15 valeur cible</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Pression Blanchet</td>
+                                                <td>±5% valeur cible</td>
+                                                <td>±10% valeur cible</td>
+                                                <td>±15% valeur cible</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            
+                            <div id="tab-gravure-thresholds" class="tab-pane">
+                                <div class="table-responsive">
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                <th>Paramètre</th>
+                                                <th>Seuil Alerte Mineure</th>
+                                                <th>Seuil Alerte Majeure</th>
+                                                <th>Seuil Alerte Critique</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Concentration Solvant</td>
+                                                <td>±3% valeur cible</td>
+                                                <td>±5% valeur cible</td>
+                                                <td>±8% valeur cible</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Température Solvant</td>
+                                                <td>±3°C valeur cible</td>
+                                                <td>±5°C valeur cible</td>
+                                                <td>±8°C valeur cible</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Tension Cylindre</td>
+                                                <td>±5% valeur cible</td>
+                                                <td>±10% valeur cible</td>
+                                                <td>±15% valeur cible</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Température Sécheur</td>
+                                                <td>±5°C valeur cible</td>
+                                                <td>±10°C valeur cible</td>
+                                                <td>±15°C valeur cible</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Pression Raclage</td>
+                                                <td>±5% valeur cible</td>
+                                                <td>±10% valeur cible</td>
+                                                <td>±15% valeur cible</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            
+                            <div id="tab-production-thresholds" class="tab-pane">
+                                <div class="table-responsive">
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                <th>Paramètre</th>
+                                                <th>Seuil Alerte Mineure</th>
+                                                <th>Seuil Alerte Majeure</th>
+                                                <th>Seuil Alerte Critique</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Vitesse Production</td>
+                                                <td>&lt;90% objectif</td>
+                                                <td>&lt;80% objectif</td>
+                                                <td>&lt;70% objectif</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Taux de Rebut</td>
+                                                <td>&gt;3%</td>
+                                                <td>&gt;5%</td>
+                                                <td>&gt;8%</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Temps d'Arrêt</td>
+                                                <td>&gt;10% temps total</td>
+                                                <td>&gt;15% temps total</td>
+                                                <td>&gt;20% temps total</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Temps de Calage</td>
+                                                <td>&gt;110% standard</td>
+                                                <td>&gt;125% standard</td>
+                                                <td>&gt;150% standard</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Niveau Consommables</td>
+                                                <td>&lt;20% restant</td>
+                                                <td>&lt;10% restant</td>
+                                        
+(Content truncated due to size limit. Use line ranges to read in chunks)

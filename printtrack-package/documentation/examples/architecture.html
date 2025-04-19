@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Architecture - Application de Suivi de Production</title>
+    <meta name="description" content="Architecture de l'application de suivi de production et gestion qualité pour les machines d'impression offset et héliogravure">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&family=Source+Code+Pro&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">Print<span>Track</span></div>
+            <nav>
+                <ul>
+                    <li><a href="../index.html">Accueil</a></li>
+                    <li><a href="overview.html">Vue d'ensemble</a></li>
+                    <li><a href="architecture.html" class="active">Architecture</a></li>
+                    <li><a href="features.html">Fonctionnalités</a></li>
+                    <li><a href="workflow.html">Workflow</a></li>
+                    <li><a href="alerts.html">Alertes</a></li>
+                    <li><a href="technical.html">Technique</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Breadcrumbs -->
+    <div class="container mt-3" style="margin-top: 5rem;">
+        <ul class="breadcrumbs">
+            <li><a href="../index.html">Accueil</a></li>
+            <li class="active">Architecture</li>
+        </ul>
+    </div>
+
+    <!-- Main Content -->
+    <section class="architecture">
+        <div class="container">
+            <div class="section-title">
+                <h1>Architecture de l'Application</h1>
+            </div>
+            
+            <div class="row animate-on-scroll">
+                <div class="col">
+                    <h2>Architecture en Couches</h2>
+                    <p>L'application est conçue selon une architecture modulaire en trois couches principales, permettant une séparation claire des responsabilités et une évolution progressive des fonctionnalités.</p>
+                    
+                    <div class="card-grid mt-2">
+                        <div class="card">
+                            <div class="card-content">
+                                <h3><i class="fas fa-desktop text-primary"></i> Couche Présentation</h3>
+                                <ul>
+                                    <li>Interface utilisateur responsive adaptée aux postes fixes et appareils mobiles</li>
+                                    <li>Tableaux de bord spécifiques par rôle (conducteur, contrôleur, responsable qualité, manager)</li>
+                                    <li>Formulaires de saisie adaptés à chaque étape du processus de production</li>
+                                    <li>Visualisation des données en temps réel (graphiques, indicateurs)</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="card">
+                            <div class="card-content">
+                                <h3><i class="fas fa-cogs text-primary"></i> Couche Métier</h3>
+                                <ul>
+                                    <li>Modules fonctionnels correspondant aux 9 rubriques identifiées</li>
+                                    <li>Moteur de règles pour la validation des données et le déclenchement d'alertes</li>
+                                    <li>Système de workflow pour la gestion des processus et des transitions d'états</li>
+                                    <li>Gestionnaire de notifications et d'alertes</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="card">
+                            <div class="card-content">
+                                <h3><i class="fas fa-database text-primary"></i> Couche Données</h3>
+                                <ul>
+                                    <li>Base de données relationnelle pour le stockage structuré des informations</li>
+                                    <li>Système de journalisation pour la traçabilité des actions</li>
+                                    <li>Stockage de fichiers pour les documents associés (photos, rapports)</li>
+                                    <li>Système de sauvegarde et d'archivage</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row mt-4 animate-on-scroll delay-1">
+                <div class="col">
+                    <h2>Structure de la Base de Données</h2>
+                    <p>La base de données est organisée autour d'entités principales qui reflètent les objets métier de l'application, avec des relations clairement définies entre elles.</p>
+                    
+                    <div class="tabs mt-3">
+                        <div class="tab-links">
+                            <div class="tab-link active" data-target="#tab-main-tables">Tables Principales</div>
+                            <div class="tab-link" data-target="#tab-tracking-tables">Tables de Suivi</div>
+                            <div class="tab-link" data-target="#tab-reference-tables">Tables de Référence</div>
+                        </div>
+                        
+                        <div class="tab-content">
+                            <div id="tab-main-tables" class="tab-pane active">
+                                <div class="table-responsive">
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                <th>Table</th>
+                                                <th>Description</th>
+                                                <th>Champs Principaux</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Bons de Fabrication</td>
+                                                <td>Entité centrale qui regroupe toutes les informations d'un travail d'impression</td>
+                                                <td>ID, références d'en-tête, état, dates (création, modification, clôture)</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Clients</td>
+                                                <td>Informations sur les clients et leurs préférences</td>
+                                                <td>ID, nom, contact, historique des travaux, exigences spécifiques</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Travaux</td>
+                                                <td>Détails des travaux à réaliser</td>
+                                                <td>ID, désignation, spécifications techniques, références aux bons</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Machines</td>
+                                                <td>Informations sur les équipements d'impression</td>
+                                                <td>ID, caractéristiques techniques, historique de maintenance, paramètres standard</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Personnel</td>
+                                                <td>Données sur les conducteurs et contrôleurs</td>
+                                                <td>ID, informations personnelles, compétences, habilitations, historique</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            
+                            <div id="tab-tracking-tables" class="tab-pane">
+                                <div class="table-responsive">
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                <th>Table</th>
+                                                <th>Description</th>
+                                                <th>Champs Principaux</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Paramètres Techniques</td>
+                                                <td>Mesures des paramètres spécifiques par procédé</td>
+                                                <td>ID, référence bon, type, valeur, date relevé, opérateur</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Contrôles Qualité</td>
+                                                <td>Résultats des contrôles effectués</td>
+                                                <td>ID, référence bon, point contrôle, valeur mesurée, date, conformité</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Incidents</td>
+                                                <td>Problèmes rencontrés pendant la production</td>
+                                                <td>ID, référence bon, description, gravité, date, action corrective, statut</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Temps de Production</td>
+                                                <td>Enregistrement des temps par catégorie</td>
+                                                <td>ID, référence bon, type temps, début, fin, durée, motif</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            
+                            <div id="tab-reference-tables" class="tab-pane">
+                                <div class="table-responsive">
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                <th>Table</th>
+                                                <th>Description</th>
+                                                <th>Champs Principaux</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Types de Support</td>
+                                                <td>Caractéristiques des supports d'impression</td>
+                                                <td>ID, catégorie, type, grammage, caractéristiques</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Procédés d'Impression</td>
+                                                <td>Paramètres standard par procédé</td>
+                                                <td>ID, nom, paramètres standard, points de contrôle associés</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Seuils et Tolérances</td>
+                                                <td>Valeurs limites pour les paramètres</td>
+                                                <td>ID, paramètre, valeur min, valeur optimale, valeur max</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Points de Contrôle</td>
+                                                <td>Définition des contrôles qualité</td>
+                                                <td>ID, procédé, description, méthode, fréquence, obligatoire</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row mt-4 animate-on-scroll delay-2">
+                <div class="col">
+                    <h2>Interfaces Utilisateur Principales</h2>
+                    <p>L'application propose différentes interfaces adaptées aux besoins spécifiques de chaque étape du processus de production et aux différents rôles utilisateurs.</p>
+                    
+                    <div class="card-grid mt-2">
+                        <div class="card">
+                            <div class="card-content">
+                                <h3>Tableau de Bord Principal</h3>
+                                <ul>
+                                    <li>Vue d'ensemble des travaux en cours</li>
+                                    <li>Indicateurs de performance</li>
+                                    <li>Alertes et notifications</li>
+                                    <li>Accès rapide aux fonctions principales</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="card">
+                            <div class="card-content">
+                                <h3>Formulaire de Création de Bon</h3>
+                                <ul>
+                                    <li>Assistant de création par étapes</li>
+                                    <li>Sélection du procédé et chargement des champs spécifiques</li>
+                                    <li>Validation des données à chaque étape</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="card">
+                            <div class="card-content">
+                                <h3>Interface de Suivi de Production</h3>
+                                <ul>
+                                    <li>Visualisation en temps réel des paramètres</li>
+                                    <li>Saisie des contrôles qualité</li>
+                                    <li>Enregistrement des incidents</li>
+                                    <li>Chronométrage des étapes</li>
+                                </ul>
+                            </div>
+                        </div>
+              
+(Content truncated due to size limit. Use line ranges to read in chunks)

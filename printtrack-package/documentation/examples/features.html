@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fonctionnalités - Application de Suivi de Production</title>
+    <meta name="description" content="Fonctionnalités détaillées de l'application de suivi de production pour l'impression offset et héliogravure">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&family=Source+Code+Pro&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">Print<span>Track</span></div>
+            <nav>
+                <ul>
+                    <li><a href="../index.html">Accueil</a></li>
+                    <li><a href="overview.html">Vue d'ensemble</a></li>
+                    <li><a href="architecture.html">Architecture</a></li>
+                    <li><a href="features.html" class="active">Fonctionnalités</a></li>
+                    <li><a href="workflow.html">Workflow</a></li>
+                    <li><a href="alerts.html">Alertes</a></li>
+                    <li><a href="technical.html">Technique</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Breadcrumbs -->
+    <div class="container mt-3" style="margin-top: 5rem;">
+        <ul class="breadcrumbs">
+            <li><a href="../index.html">Accueil</a></li>
+            <li class="active">Fonctionnalités</li>
+        </ul>
+    </div>
+
+    <!-- Main Content -->
+    <section class="features-detail">
+        <div class="container">
+            <div class="section-title">
+                <h1>Fonctionnalités Détaillées</h1>
+            </div>
+            
+            <div class="tabs mt-3">
+                <div class="tab-links">
+                    <div class="tab-link active" data-target="#tab-header">En-tête commune</div>
+                    <div class="tab-link" data-target="#tab-client">Client & travail</div>
+                    <div class="tab-link" data-target="#tab-process">Procédé & équipement</div>
+                    <div class="tab-link" data-target="#tab-time">Suivi temporel</div>
+                    <div class="tab-link" data-target="#tab-prepress">Pré-presse</div>
+                    <div class="tab-link" data-target="#tab-params">Paramètres techniques</div>
+                    <div class="tab-link" data-target="#tab-control">Contrôle en cours</div>
+                    <div class="tab-link" data-target="#tab-end">Fin de tirage</div>
+                    <div class="tab-link" data-target="#tab-closure">Clôture & passation</div>
+                </div>
+                
+                <div class="tab-content">
+                    <!-- En-tête commune -->
+                    <div id="tab-header" class="tab-pane active">
+                        <div class="row animate-on-scroll">
+                            <div class="col">
+                                <h2>1. En-tête commune</h2>
+                                <p>L'en-tête commune constitue le point de départ de chaque bon de fabrication, regroupant les informations essentielles d'identification et de planification.</p>
+                                
+                                <h3>Champs principaux</h3>
+                                <div class="table-responsive">
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                <th>Champ</th>
+                                                <th>Type</th>
+                                                <th>Description</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Date</td>
+                                                <td>Date (JJ/MM/AAAA)</td>
+                                                <td>Date de création du bon de fabrication</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Heure de démarrage</td>
+                                                <td>Heure (HH:MM)</td>
+                                                <td>Heure prévue ou effective de démarrage de la production</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Quart de travail</td>
+                                                <td>Liste déroulante</td>
+                                                <td>Matin (6h-14h) / Après-midi (14h-22h) / Nuit (22h-6h)</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Numéro de dossier</td>
+                                                <td>Texte formaté</td>
+                                                <td>Format: BF-AAAAMMJJ-XXX (où XXX est un numéro séquentiel)</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                
+                                <h3>Règles de validation</h3>
+                                <ul>
+                                    <li>La date ne peut pas être dans le futur de plus de 7 jours</li>
+                                    <li>L'heure de démarrage doit correspondre à l'horaire du quart sélectionné</li>
+                                    <li>Le numéro de dossier est généré automatiquement et non modifiable après création</li>
+                                </ul>
+                                
+                                <h3>Workflows associés</h3>
+                                <ul>
+                                    <li>Création automatique du numéro de dossier lors de la validation de l'en-tête</li>
+                                    <li>Notification aux équipes concernées lors de la création d'un nouveau bon</li>
+                                    <li>Verrouillage des champs après validation de l'en-tête</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Client & travail -->
+                    <div id="tab-client" class="tab-pane">
+                        <div class="row animate-on-scroll">
+                            <div class="col">
+                                <h2>2. Client & travail</h2>
+                                <p>Cette section regroupe toutes les informations relatives au client et aux spécifications du travail à réaliser, essentielles pour la planification et l'exécution de la production.</p>
+                                
+                                <h3>Champs principaux</h3>
+                                <div class="table-responsive">
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                <th>Champ</th>
+                                                <th>Type</th>
+                                                <th>Description</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Nom du client</td>
+                                                <td>Liste déroulante + recherche</td>
+                                                <td>Sélection dans la base clients existante</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Désignation du travail</td>
+                                                <td>Texte</td>
+                                                <td>Description du travail à réaliser</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Quantité à imprimer</td>
+                                                <td>Nombre entier</td>
+                                                <td>Nombre d'exemplaires à produire</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Nombre de couleurs</td>
+                                                <td>Nombre entier (1-8)</td>
+                                                <td>Nombre de couleurs d'impression</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Type de support</td>
+                                                <td>Liste déroulante hiérarchique</td>
+                                                <td>Catégorie > Type > Grammage</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Format (L×l)</td>
+                                                <td>Deux nombres décimaux</td>
+                                                <td>Dimensions en mm</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Finitions requises</td>
+                                                <td>Cases à cocher multiples</td>
+                                                <td>Vernis, pelliculage, découpe, etc.</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                
+                                <h3>Règles de validation</h3>
+                                <ul>
+                                    <li>Le nom du client doit exister dans la base de données</li>
+                                    <li>La désignation du travail doit comporter entre 10 et 100 caractères</li>
+                                    <li>La quantité à imprimer doit être supérieure à 0</li>
+                                    <li>Le type de support doit être compatible avec le procédé sélectionné</li>
+                                    <li>Le format doit être dans les limites de la machine sélectionnée</li>
+                                </ul>
+                                
+                                <h3>Workflows associés</h3>
+                                <ul>
+                                    <li>Chargement automatique des informations client lors de la sélection</li>
+                                    <li>Vérification de compatibilité entre support et procédé d'impression</li>
+                                    <li>Calcul automatique du temps estimé de production</li>
+                                    <li>Proposition automatique de machines compatibles</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Procédé & équipement -->
+                    <div id="tab-process" class="tab-pane">
+                        <div class="row animate-on-scroll">
+                            <div class="col">
+                                <h2>3. Procédé & équipement</h2>
+                                <p>Cette section permet de définir le procédé d'impression utilisé (offset ou héliogravure), la machine et le personnel assigné à la production.</p>
+                                
+                                <h3>Champs principaux</h3>
+                                <div class="table-responsive">
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                <th>Champ</th>
+                                                <th>Type</th>
+                                                <th>Description</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Procédé d'impression</td>
+                                                <td>Boutons radio</td>
+                                                <td>Offset / Héliogravure</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Nom de la machine</td>
+                                                <td>Liste déroulante filtrée</td>
+                                                <td>Machines disponibles selon le procédé</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Conducteur principal</td>
+                                                <td>Liste déroulante</td>
+                                                <td>Personnel qualifié disponible</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Conducteurs secondaires</td>
+                                                <td>Liste déroulante multiple</td>
+                                                <td>Personnel supplémentaire</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Contrôleur qualité</td>
+                                                <td>Liste déroulante</td>
+                                                <td>Personnel qualifié disponible</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Configuration machine</td>
+                                                <td>Schéma interactif</td>
+                                                <td>Disposition des groupes d'impression</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Vitesse cible</td>
+                                                <td>Nombre</td>
+                                                <td>Feuilles/h ou m/min selon procédé</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                
+                                <div class="row mt-3">
+                                    <div class="col">
+                                        <h3>Spécificités Offset</h3>
+                                        <ul>
+                                            <li>Configuration des groupes d'impression</li>
+                                    
+(Content truncated due to size limit. Use line ranges to read in chunks)

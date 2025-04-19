@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spécifications Techniques - Application de Suivi de Production</title>
+    <meta name="description" content="Spécifications techniques détaillées de l'application de suivi de production pour l'impression offset et héliogravure">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&family=Source+Code+Pro&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">Print<span>Track</span></div>
+            <nav>
+                <ul>
+                    <li><a href="../index.html">Accueil</a></li>
+                    <li><a href="overview.html">Vue d'ensemble</a></li>
+                    <li><a href="architecture.html">Architecture</a></li>
+                    <li><a href="features.html">Fonctionnalités</a></li>
+                    <li><a href="workflow.html">Workflow</a></li>
+                    <li><a href="alerts.html">Alertes</a></li>
+                    <li><a href="technical.html" class="active">Technique</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Breadcrumbs -->
+    <div class="container mt-3" style="margin-top: 5rem;">
+        <ul class="breadcrumbs">
+            <li><a href="../index.html">Accueil</a></li>
+            <li class="active">Spécifications Techniques</li>
+        </ul>
+    </div>
+
+    <!-- Main Content -->
+    <section class="technical-detail">
+        <div class="container">
+            <div class="section-title">
+                <h1>Spécifications Techniques</h1>
+            </div>
+            
+            <div class="row animate-on-scroll">
+                <div class="col">
+                    <p>Cette section présente les spécifications techniques détaillées de l'application de suivi de production et gestion qualité, couvrant l'architecture technique, les technologies recommandées, le modèle de données et les aspects de sécurité.</p>
+                </div>
+            </div>
+            
+            <div class="row mt-3 animate-on-scroll delay-1">
+                <div class="col">
+                    <h2>Architecture Technique</h2>
+                    <p>L'application est conçue selon une architecture moderne, évolutive et maintenable, permettant une adaptation aux besoins futurs et une intégration avec les systèmes existants.</p>
+                    
+                    <div class="card-grid mt-2">
+                        <div class="card">
+                            <div class="card-content">
+                                <h3><i class="fas fa-layer-group text-primary"></i> Architecture N-Tiers</h3>
+                                <ul>
+                                    <li><strong>Couche Présentation</strong> - Interface utilisateur web responsive et applications mobiles</li>
+                                    <li><strong>Couche API</strong> - Services RESTful pour la communication entre clients et serveur</li>
+                                    <li><strong>Couche Métier</strong> - Logique applicative et règles métier</li>
+                                    <li><strong>Couche Accès Données</strong> - Interaction avec la base de données et autres sources</li>
+                                    <li><strong>Couche Données</strong> - Base de données relationnelle et stockage de fichiers</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="card">
+                            <div class="card-content">
+                                <h3><i class="fas fa-network-wired text-primary"></i> Infrastructure</h3>
+                                <ul>
+                                    <li><strong>Serveurs d'Application</strong> - Déploiement sur infrastructure cloud ou on-premise</li>
+                                    <li><strong>Équilibrage de Charge</strong> - Distribution du trafic pour haute disponibilité</li>
+                                    <li><strong>Serveurs de Base de Données</strong> - Configuration en cluster pour redondance</li>
+                                    <li><strong>Serveurs de Fichiers</strong> - Stockage sécurisé des documents et images</li>
+                                    <li><strong>Serveurs de Cache</strong> - Optimisation des performances</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="card">
+                            <div class="card-content">
+                                <h3><i class="fas fa-exchange-alt text-primary"></i> Intégration</h3>
+                                <ul>
+                                    <li><strong>API RESTful</strong> - Points d'accès standardisés pour l'intégration</li>
+                                    <li><strong>Webhooks</strong> - Notifications événementielles vers systèmes externes</li>
+                                    <li><strong>Connecteurs ERP/MES</strong> - Intégration avec systèmes de gestion existants</li>
+                                    <li><strong>Connecteurs IoT</strong> - Interface avec capteurs et équipements connectés</li>
+                                    <li><strong>Services d'Import/Export</strong> - Échange de données avec formats standards</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row mt-4 animate-on-scroll delay-2">
+                <div class="col">
+                    <h2>Technologies Recommandées</h2>
+                    <p>La sélection des technologies est basée sur leur maturité, leur performance, leur évolutivité et la disponibilité des compétences sur le marché.</p>
+                    
+                    <div class="tabs mt-2">
+                        <div class="tab-links">
+                            <div class="tab-link active" data-target="#tab-frontend">Frontend</div>
+                            <div class="tab-link" data-target="#tab-backend">Backend</div>
+                            <div class="tab-link" data-target="#tab-database">Base de Données</div>
+                            <div class="tab-link" data-target="#tab-devops">DevOps</div>
+                        </div>
+                        
+                        <div class="tab-content">
+                            <div id="tab-frontend" class="tab-pane active">
+                                <div class="row">
+                                    <div class="col">
+                                        <h3>Technologies Frontend</h3>
+                                        <ul>
+                                            <li><strong>Framework UI</strong> - React.js ou Vue.js</li>
+                                            <li><strong>State Management</strong> - Redux ou Vuex</li>
+                                            <li><strong>UI Components</strong> - Material-UI ou Vuetify</li>
+                                            <li><strong>Responsive Design</strong> - Bootstrap ou Tailwind CSS</li>
+                                            <li><strong>Data Visualization</strong> - D3.js ou Chart.js</li>
+                                            <li><strong>PWA Support</strong> - Workbox</li>
+                                            <li><strong>API Client</strong> - Axios ou Fetch API</li>
+                                        </ul>
+                                    </div>
+                                    <div class="col">
+                                        <h3>Applications Mobiles</h3>
+                                        <ul>
+                                            <li><strong>Cross-Platform</strong> - React Native ou Flutter</li>
+                                            <li><strong>Native iOS</strong> - Swift</li>
+                                            <li><strong>Native Android</strong> - Kotlin</li>
+                                            <li><strong>Offline Support</strong> - SQLite + Synchronisation</li>
+                                            <li><strong>Push Notifications</strong> - Firebase Cloud Messaging</li>
+                                            <li><strong>Scanning</strong> - Intégration caméra pour QR/code-barres</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div id="tab-backend" class="tab-pane">
+                                <div class="row">
+                                    <div class="col">
+                                        <h3>Technologies Backend</h3>
+                                        <ul>
+                                            <li><strong>Langage Principal</strong> - Java (Spring Boot) ou .NET Core</li>
+                                            <li><strong>API</strong> - REST avec OpenAPI/Swagger</li>
+                                            <li><strong>Authentification</strong> - OAuth 2.0 + JWT</li>
+                                            <li><strong>Validation</strong> - Bean Validation (Java) ou FluentValidation (.NET)</li>
+                                            <li><strong>ORM</strong> - Hibernate (Java) ou Entity Framework (.NET)</li>
+                                            <li><strong>Messaging</strong> - RabbitMQ ou Apache Kafka</li>
+                                            <li><strong>Reporting</strong> - JasperReports ou SSRS</li>
+                                        </ul>
+                                    </div>
+                                    <div class="col">
+                                        <h3>Services Spécialisés</h3>
+                                        <ul>
+                                            <li><strong>Workflow Engine</strong> - Camunda BPM ou Flowable</li>
+                                            <li><strong>Rules Engine</strong> - Drools</li>
+                                            <li><strong>Search Engine</strong> - Elasticsearch</li>
+                                            <li><strong>Caching</strong> - Redis</li>
+                                            <li><strong>File Storage</strong> - MinIO ou solution cloud</li>
+                                            <li><strong>Batch Processing</strong> - Spring Batch ou Quartz</li>
+                                            <li><strong>Analytics</strong> - Apache Spark</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div id="tab-database" class="tab-pane">
+                                <div class="row">
+                                    <div class="col">
+                                        <h3>Base de Données Principale</h3>
+                                        <ul>
+                                            <li><strong>SGBDR</strong> - PostgreSQL ou Microsoft SQL Server</li>
+                                            <li><strong>Modèle</strong> - Relationnel avec schéma normalisé</li>
+                                            <li><strong>Haute Disponibilité</strong> - Réplication et clustering</li>
+                                            <li><strong>Backup</strong> - Sauvegardes incrémentales et complètes</li>
+                                            <li><strong>Migration</strong> - Flyway ou Liquibase</li>
+                                            <li><strong>Audit</strong> - Journalisation des modifications</li>
+                                        </ul>
+                                    </div>
+                                    <div class="col">
+                                        <h3>Stockage Complémentaire</h3>
+                                        <ul>
+                                            <li><strong>Cache</strong> - Redis</li>
+                                            <li><strong>Séries Temporelles</strong> - InfluxDB ou TimescaleDB</li>
+                                            <li><strong>Documents</strong> - MongoDB (pour données non structurées)</li>
+                                            <li><strong>Recherche</strong> - Elasticsearch</li>
+                                            <li><strong>Fichiers</strong> - Système de fichiers distribué</li>
+                                            <li><strong>Archivage</strong> - Solution de stockage à froid</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div id="tab-devops" class="tab-pane">
+                                <div class="row">
+                                    <div class="col">
+                                        <h3>Infrastructure et Déploiement</h3>
+                                        <ul>
+                                            <li><strong>Conteneurisation</strong> - Docker</li>
+                                            <li><strong>Orchestration</strong> - Kubernetes</li>
+                                            <li><strong>Infrastructure as Code</strong> - Terraform</li>
+                                            <li><strong>Configuration</strong> - Ansible</li>
+                                            <li><strong>CI/CD</strong> - Jenkins, GitLab CI ou GitHub Actions</li>
+                                            <li><strong>Registry</strong> - Docker Registry ou Nexus</li>
+                                        </ul>
+                                    </div>
+                                    <div class="col">
+                                        <h3>Monitoring et Opérations</h3>
+                                        <ul>
+                                            <li><strong>Monitoring</strong> - Prometheus + Grafana</li>
+                                            <li><strong>Logging</strong> - ELK Stack (Elasticsearch, Logstash, Kibana)</li>
+                                            <li><strong>Tracing</strong> - Jaeger ou Zipkin</li>
+                                            <li><strong>Alerting</strong> - Alertmanager</li>
+                                            <li><strong>Sécurité</strong> - SonarQube, OWASP ZAP</li>
+                                            <li><strong>Performance</strong> - JMeter, Gatling</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row mt-4 animate-on-scroll delay-3">
+                <div class="col">
+                    <h2>Modèle de Données Détaillé</h2>
+                    <p>Le modèle de données est conçu pour assurer l'intégrité, la traçabilité et la performance des opérations sur les données.</p>
+                    
+                    <div class="row mt-2">
+                        <div class="col">
+ 
+(Content truncated due to size limit. Use line ranges to read in chunks)

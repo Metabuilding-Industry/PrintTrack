@@ -1,0 +1,278 @@
+/* Responsive CSS for Print Production Tracking Application */
+
+/* Mobile First Approach */
+
+/* Small devices (phones, 576px and down) */
+@media (max-width: 576px) {
+  /* Typography */
+  h1 {
+    font-size: 2rem;
+  }
+  
+  h2 {
+    font-size: 1.5rem;
+  }
+  
+  h3 {
+    font-size: 1.25rem;
+  }
+  
+  /* Navigation */
+  .header-container {
+    padding: 0 1rem;
+  }
+  
+  nav ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: var(--primary-color);
+    flex-direction: column;
+    padding: 1rem 0;
+    box-shadow: var(--shadow);
+  }
+  
+  nav ul.show {
+    display: flex;
+  }
+  
+  nav ul li {
+    margin: 0;
+    text-align: center;
+  }
+  
+  nav ul li a {
+    display: block;
+    padding: 1rem;
+  }
+  
+  .hamburger {
+    display: block;
+  }
+  
+  /* Hero */
+  .hero {
+    height: auto;
+    padding: 4rem 0;
+    margin-top: 3.5rem;
+  }
+  
+  .hero h1 {
+    font-size: 2rem;
+  }
+  
+  /* Features */
+  .feature-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  /* Workflow */
+  .workflow-steps .row {
+    flex-direction: column;
+  }
+  
+  .workflow-steps .col {
+    margin-bottom: 2rem;
+  }
+  
+  /* Alerts */
+  .alert-types {
+    grid-template-columns: 1fr;
+  }
+  
+  /* Footer */
+  .footer-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 577px) and (max-width: 768px) {
+  /* Navigation */
+  nav ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: var(--primary-color);
+    flex-direction: column;
+    padding: 1rem 0;
+    box-shadow: var(--shadow);
+  }
+  
+  nav ul.show {
+    display: flex;
+  }
+  
+  nav ul li {
+    margin: 0;
+    text-align: center;
+  }
+  
+  nav ul li a {
+    display: block;
+    padding: 1rem;
+  }
+  
+  .hamburger {
+    display: block;
+  }
+  
+  /* Features */
+  .feature-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  /* Footer */
+  .footer-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 769px) and (max-width: 992px) {
+  /* Features */
+  .feature-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  /* Footer */
+  .footer-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 993px) {
+  /* Default styles are for desktop, no overrides needed */
+}
+
+/* Common responsive elements */
+
+/* Responsive tables */
+@media (max-width: 768px) {
+  table, thead, tbody, th, td, tr {
+    display: block;
+  }
+  
+  thead tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+  
+  tr {
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+  }
+  
+  td {
+    border: none;
+    border-bottom: 1px solid #ddd;
+    position: relative;
+    padding-left: 50%;
+  }
+  
+  td:before {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    width: 45%;
+    padding-right: 10px;
+    white-space: nowrap;
+    font-weight: bold;
+    content: attr(data-label);
+  }
+}
+
+/* Responsive images */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Responsive row/column layout */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -1rem;
+}
+
+.col {
+  flex: 1;
+  padding: 0 1rem;
+}
+
+@media (max-width: 768px) {
+  .row {
+    flex-direction: column;
+  }
+  
+  .col {
+    flex: 0 0 100%;
+    margin-bottom: 1.5rem;
+  }
+}
+
+/* Responsive tabs */
+@media (max-width: 768px) {
+  .tab-links {
+    flex-direction: column;
+  }
+  
+  .tab-link {
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .tab-link.active {
+    border-bottom: 1px solid #ddd;
+    border-left: 3px solid var(--secondary-color);
+  }
+}
+
+/* Print styles */
+@media print {
+  header, footer, .hero, .cta {
+    display: none;
+  }
+  
+  body {
+    font-size: 12pt;
+    color: #000;
+    background-color: #fff;
+  }
+  
+  a {
+    color: #000;
+    text-decoration: underline;
+  }
+  
+  .container {
+    width: 100%;
+    max-width: none;
+    padding: 0;
+  }
+  
+  section {
+    padding: 1rem 0;
+    page-break-inside: avoid;
+  }
+  
+  h1, h2, h3 {
+    page-break-after: avoid;
+  }
+  
+  img {
+    max-width: 100% !important;
+  }
+  
+  p, h2, h3 {
+    orphans: 3;
+    widows: 3;
+  }
+}
